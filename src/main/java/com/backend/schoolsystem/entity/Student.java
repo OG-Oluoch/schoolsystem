@@ -11,11 +11,7 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
 import java.util.Date;
 
-
-
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity
 @Table(name = "students")
 public class Student {
@@ -25,20 +21,20 @@ public class Student {
     private Long id;
 
    @Column(unique = true, nullable = false)
-    private String nemis_number;
+    private String nemisNumber;
 
-    private String first_name;
-    private String middle_name;
-    private String last_name;
+    private String firstName;
+    private String middleName;
+    private String lastName;
 
-    private Long roll_number;
+    private Long rollNumber;
 
     @Enumerated(EnumType.STRING)
     private Gender gender;
-    private String date_of_birth;
-    private String current_class_section;
-    private Date admission_date;
-    private boolean is_active;
+    private String dateOfBirth;
+    private String currentClassSection;
+    private Date admissionDate;
+    private boolean isActive;
 
 
     @Column(nullable = false, updatable = false)
