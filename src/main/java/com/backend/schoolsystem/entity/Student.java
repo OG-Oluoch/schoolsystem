@@ -1,5 +1,6 @@
 package com.backend.schoolsystem.entity;
 
+import com.backend.schoolsystem.entity.enums.Gender;
 import jakarta.persistence.*;
 
 import lombok.AllArgsConstructor;
@@ -29,6 +30,8 @@ public class Student {
     private String first_name;
     private String middle_name;
     private String last_name;
+
+    private Long roll_number;
 
     @Enumerated(EnumType.STRING)
     private Gender gender;

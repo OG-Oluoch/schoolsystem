@@ -1,4 +1,4 @@
-package com.backend.schoolsystem.entity;
+package com.backend.schoolsystem.entity.enums;
 
 public enum CurriculumType {
 
