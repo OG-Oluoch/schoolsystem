@@ -1,9 +1,6 @@
 package com.backend.schoolsystem.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -17,7 +14,11 @@ public class ClassSection {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String sectionName;
+
+    @ManyToOne
     private GradeLevel gradeLevel;
+
+    @ManyToOne
     private Tutor tutor;
     private Year academicYear;
     private Integer noOfStudents;
