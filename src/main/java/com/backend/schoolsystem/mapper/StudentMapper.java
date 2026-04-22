@@ -21,9 +21,9 @@ public class StudentMapper {
             student.getNemisNumber(),
             student.getRollNumber(),
             student.getGender(),
-            student.getDateOfBirth() != null ? student.getDateOfBirth().toString() : null,
+            student.getDateOfBirth() != null ? student.getDateOfBirth() : null,
             student.getCurrentClassSection() != null ? student.getCurrentClassSection() : null,
-            student.getAdmissionDate() != null ? student.getAdmissionDate().toString() : null,
+            student.getAdmissionDate() != null ? student.getAdmissionDate() : null,
             student.isActive()
         );
 
@@ -35,7 +35,7 @@ public class StudentMapper {
             return null;
         }
 
-       return new StudentDto(
+       return new Student(
                 studentDto.getId(),
                 studentDto.getFirstName(),
                 studentDto.getMiddleName(),
@@ -43,9 +43,9 @@ public class StudentMapper {
                 studentDto.getNemisNumber(),
                 studentDto.getRollNumber(),
                 studentDto.getGender(),
-                studentDto.getDateOfBirth() != null ? LocalDate.parse(studentDto.getDateOfBirth()) : null,
+                studentDto.getDateOfBirth() != null ? studentDto.getDateOfBirth() : null,
                 studentDto.getCurrentClassSection() != null ? studentDto.getCurrentClassSection() : null,
-                studentDto.getAdmissionDate() != null ? LocalDate.parse(studentDto.getAdmissionDate()) : null,
+                studentDto.getAdmissionDate() != null ? studentDto.getAdmissionDate() : null,
                 studentDto.isActive()
        );
 

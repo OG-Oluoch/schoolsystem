@@ -31,7 +31,7 @@ public class Student {
 
     @Enumerated(EnumType.STRING)
     private Gender gender;
-    private String dateOfBirth;
+    private Date dateOfBirth;
     private String currentClassSection;
     private Date admissionDate;
     private boolean isActive;
@@ -44,7 +44,10 @@ public class Student {
     @Column(nullable = false)
     private LocalDateTime updated_at;
 
-  // Automatically set the created_at field when the entity is persisted
+    public Student(Long id, String firstName, String middleName, String lastName, String nemisNumber, Long rollNumber, Gender gender, Date date, String s, Date date1, boolean active) {
+    }
+
+    // Automatically set the created_at field when the entity is persisted
   @PrePersist
   protected void onCreate() {
   created_at = LocalDateTime.now();
