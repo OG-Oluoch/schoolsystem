@@ -45,4 +45,24 @@ public class StudentController {
 
         return ResponseEntity.ok(studentList);
     }
+
+    //update student rest api
+    @PutMapping("{id}")
+    public ResponseEntity<StudentDto> updateStudent(@PathVariable("id") Long studentId,@RequestBody StudentDto updatedStudentDto){
+
+       StudentDto studentDto = studentService.updateStudent(studentId,updatedStudentDto);
+
+       return ResponseEntity.ok(studentDto);
+
+    }
+
+    //delete student rest api
+    @DeleteMapping("{id}")
+    public ResponseEntity<String> deleteStudent(@PathVariable("id") Long studentId){
+
+        studentService.deleteStudent(studentId);
+
+        return ResponseEntity.ok("Student deleted successfully");
+
+    }
 }
