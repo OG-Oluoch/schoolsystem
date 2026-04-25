@@ -3,15 +3,17 @@ package com.backend.schoolsystem.entity;
 import com.backend.schoolsystem.entity.enums.Gender;
 import jakarta.persistence.*;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
 
-import lombok.NoArgsConstructor;
+import lombok.*;
 
+
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "students")
 public class Student {
@@ -20,20 +22,23 @@ public class Student {
    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-   @Column(unique = true, nullable = false)
-    private String nemisNumber;
+
 
     private String firstName;
     private String middleName;
     private String lastName;
 
+    @Column(unique = true, nullable = false)
+    private String nemisNumber;
+
+    @Column(unique = true, nullable = false)
     private Long rollNumber;
 
     @Enumerated(EnumType.STRING)
     private Gender gender;
-    private Date dateOfBirth;
+    private LocalDate dateOfBirth;
     private String currentClassSection;
-    private Date admissionDate;
+    private LocalDate admissionDate;
     private boolean isActive;
 
 
@@ -44,14 +49,39 @@ public class Student {
     @Column(nullable = false)
     private LocalDateTime updated_at;
 
-    public Student(Long id, String firstName, String middleName, String lastName, String nemisNumber, Long rollNumber, Gender gender, Date date, String s, Date date1, boolean active) {
+
+
+
+    public Student(Long id, String firstName, String middleName, String lastName, String nemisNumber, Long rollNumber, Gender gender, LocalDate date, String currentClassSection, LocalDate admissionDate, boolean active) {
+        this.id = id;
+        this.firstName = firstName;
+        this.middleName = middleName;
+        this.lastName = lastName;
+        this.nemisNumber = nemisNumber;
+        this.rollNumber = rollNumber;
+        this.gender = gender;
+        this.dateOfBirth = date;
+        this.currentClassSection = currentClassSection;
+        this.admissionDate = admissionDate;
+        this.isActive = active;
     }
+
+
+
 
     // Automatically set the created_at field when the entity is persisted
   @PrePersist
   protected void onCreate() {
-  created_at = LocalDateTime.now();
+
+        this.created_at = LocalDateTime.now();
+        this.updated_at = LocalDateTime.now();
   }
+
+    // Automatically update the updated_at field when the entity is updated
+    @PreUpdate
+    protected void onUpdate() {
+        this.updated_at = LocalDateTime.now();
+    }
 
 
 }

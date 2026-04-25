@@ -3,6 +3,7 @@ package com.backend.schoolsystem.dto;
 import com.backend.schoolsystem.entity.enums.Gender;
 import lombok.*;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Getter
@@ -13,15 +14,17 @@ import java.util.Date;
 public class StudentDto {
 
     private Long id;
+
     private String firstName;
     private String middleName;
     private String lastName;
     private String nemisNumber;
+
     private Long rollNumber;
     private Gender gender;
-    private Date dateOfBirth;
+    private LocalDate dateOfBirth;
     private String currentClassSection;
-    private Date admissionDate;
+    private LocalDate admissionDate;
     private boolean isActive;
 
 }
