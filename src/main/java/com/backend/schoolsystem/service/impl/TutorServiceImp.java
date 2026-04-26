@@ -32,4 +32,13 @@ public class TutorServiceImp implements TutorService {
                 .orElseThrow(()-> new ResourceNotFoundException("Tutor with the given id does not exist: "+id));
         return TutorMapper.mapToTutorDto(tutor);
     }
+
+    @Override
+    public TutorDto getTutorByEmail(String email) {
+
+      Tutor tutor =  tutorRepository.findByEmail(email)
+                .orElseThrow(()-> new ResourceNotFoundException("Tutor with the given email does not exist: "+email));
+
+      return TutorMapper.mapToTutorDto(tutor);
+    }
 }

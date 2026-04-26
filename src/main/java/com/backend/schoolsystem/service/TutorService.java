@@ -7,4 +7,6 @@ public interface TutorService {
     TutorDto createTutor(TutorDto tutorDto);
 
     TutorDto getTutorById(Long id);
+
+    TutorDto getTutorByEmail(String email);
 }

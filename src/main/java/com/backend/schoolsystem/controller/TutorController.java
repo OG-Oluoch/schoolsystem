@@ -35,4 +35,14 @@ public class TutorController {
         return ResponseEntity.ok(tutorDto);
 
     }
+
+    // get tutor by email
+    @GetMapping("/email{email}")
+    public ResponseEntity<TutorDto> getTutorByEmail(@PathVariable String email){
+
+      TutorDto showTutor =  tutorService.getTutorByEmail(email);
+
+      return ResponseEntity.ok(showTutor);
+
+    }
 }
