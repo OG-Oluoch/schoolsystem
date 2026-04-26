@@ -3,11 +3,14 @@ package com.backend.schoolsystem.controller;
 
 import com.backend.schoolsystem.dto.TutorDto;
 
+import com.backend.schoolsystem.entity.Tutor;
 import com.backend.schoolsystem.service.TutorService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/tutors")
@@ -43,6 +46,16 @@ public class TutorController {
       TutorDto showTutor =  tutorService.getTutorByEmail(email);
 
       return ResponseEntity.ok(showTutor);
+
+    }
+
+    //get all tutors
+    @GetMapping("/all")
+    public ResponseEntity<List<TutorDto>> getAllTutors(){
+
+        List<TutorDto> tutorDtoList = tutorService.getAllTutors();
+
+        return ResponseEntity.ok(tutorDtoList);
 
     }
 }

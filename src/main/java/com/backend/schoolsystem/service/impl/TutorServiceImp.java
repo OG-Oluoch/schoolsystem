@@ -9,6 +9,9 @@ import com.backend.schoolsystem.service.TutorService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 @AllArgsConstructor
 public class TutorServiceImp implements TutorService {
@@ -41,4 +44,16 @@ public class TutorServiceImp implements TutorService {
 
       return TutorMapper.mapToTutorDto(tutor);
     }
+
+    @Override
+    public List<TutorDto> getAllTutors() {
+
+        List<Tutor> tutorList = tutorRepository.findAll();
+
+
+        return tutorList.stream().map((tutor)->TutorMapper.mapToTutorDto(tutor))
+                .collect(Collectors.toList());
+    }
+
+
 }
