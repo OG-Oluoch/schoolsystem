@@ -2,6 +2,7 @@ package com.backend.schoolsystem.service.impl;
 
 import com.backend.schoolsystem.dto.TutorDto;
 import com.backend.schoolsystem.entity.Tutor;
+import com.backend.schoolsystem.exception.ResourceNotFoundException;
 import com.backend.schoolsystem.mapper.TutorMapper;
 import com.backend.schoolsystem.repository.TutorRepository;
 import com.backend.schoolsystem.service.TutorService;
@@ -22,5 +23,13 @@ public class TutorServiceImp implements TutorService {
 
       return TutorMapper.mapToTutorDto(saveTutor);
 
+    }
+
+    @Override
+    public TutorDto getTutorById(Long id) {
+
+        Tutor tutor = tutorRepository.findById(id)
+                .orElseThrow(()-> new ResourceNotFoundException("Tutor with the given id does not exist: "+id));
+        return TutorMapper.mapToTutorDto(tutor);
     }
 }
