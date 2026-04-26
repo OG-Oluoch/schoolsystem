@@ -15,7 +15,7 @@ import java.util.List;
 @AllArgsConstructor
 public class StudentController {
 
-    private StudentService studentService;
+    private final StudentService studentService;
 
     //add student rest api
     @PostMapping
