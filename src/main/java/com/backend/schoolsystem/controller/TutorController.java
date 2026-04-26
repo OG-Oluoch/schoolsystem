@@ -37,8 +37,8 @@ public class TutorController {
     }
 
     // get tutor by email
-    @GetMapping("/email{email}")
-    public ResponseEntity<TutorDto> getTutorByEmail(@PathVariable String email){
+    @GetMapping("/email/{mail}")
+    public ResponseEntity<TutorDto> getTutorByEmail(@PathVariable("mail") String email){
 
       TutorDto showTutor =  tutorService.getTutorByEmail(email);
 
