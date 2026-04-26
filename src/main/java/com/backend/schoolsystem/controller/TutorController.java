@@ -58,4 +58,14 @@ public class TutorController {
         return ResponseEntity.ok(tutorDtoList);
 
     }
+
+    //update tutor
+    @PutMapping("{id}")
+    public ResponseEntity<TutorDto> updateTutor(@PathVariable("id") Long id, @RequestBody TutorDto tutorDto){
+
+     TutorDto tutorDto1 =  tutorService.updateTutor(id,tutorDto);
+
+     return ResponseEntity.ok(tutorDto1);
+
+    }
 }

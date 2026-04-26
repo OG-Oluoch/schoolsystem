@@ -55,5 +55,24 @@ public class TutorServiceImp implements TutorService {
                 .collect(Collectors.toList());
     }
 
+    @Override
+    public TutorDto updateTutor(Long id, TutorDto tutorDto) {
+
+      Tutor tutor =  tutorRepository.findById(id)
+                .orElseThrow(()-> new RuntimeException("Tutor with the given id does not exist: "+id));
+
+      tutor.setFirstName(tutorDto.getFirstName());
+      tutor.setLastName(tutorDto.getLastName());
+      tutor.setEmail(tutorDto.getEmail());
+      tutor.setPhoneNumber(tutorDto.getPhoneNumber());
+      tutor.setSubjectSpecialization(tutorDto.getSubjectSpecialization());
+      tutor.setGender(tutorDto.getGender());
+      tutor.setStatus(tutorDto.getStatus());
+
+      Tutor updatedTutor = tutorRepository.save(tutor);
+
+        return TutorMapper.mapToTutorDto(updatedTutor);
+    }
+
 
 }

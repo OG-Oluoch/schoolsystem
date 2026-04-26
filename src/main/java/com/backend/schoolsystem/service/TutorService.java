@@ -13,4 +13,6 @@ public interface TutorService {
     TutorDto getTutorByEmail(String email);
 
     List<TutorDto> getAllTutors();
+
+    TutorDto updateTutor(Long id, TutorDto updatedTutorDto);
 }
