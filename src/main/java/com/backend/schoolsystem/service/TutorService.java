@@ -15,4 +15,6 @@ public interface TutorService {
     List<TutorDto> getAllTutors();
 
     TutorDto updateTutor(Long id, TutorDto updatedTutorDto);
+
+    void deleteTutor(Long id);
 }

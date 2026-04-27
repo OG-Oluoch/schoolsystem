@@ -74,5 +74,15 @@ public class TutorServiceImp implements TutorService {
         return TutorMapper.mapToTutorDto(updatedTutor);
     }
 
+    @Override
+    public void deleteTutor(Long id) {
+
+     Tutor tutor = tutorRepository.findById(id)
+                .orElseThrow(()-> new ResourceNotFoundException("Tutor with the given id does not exist: "+id));
+
+     tutorRepository.delete(tutor);
+
+    }
+
 
 }

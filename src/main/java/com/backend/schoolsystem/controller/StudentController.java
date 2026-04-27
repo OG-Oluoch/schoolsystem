@@ -1,7 +1,6 @@
 package com.backend.schoolsystem.controller;
 
 import com.backend.schoolsystem.dto.StudentDto;
-import com.backend.schoolsystem.entity.Student;
 import com.backend.schoolsystem.service.StudentService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;

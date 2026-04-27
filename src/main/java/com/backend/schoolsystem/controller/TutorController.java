@@ -68,4 +68,13 @@ public class TutorController {
      return ResponseEntity.ok(tutorDto1);
 
     }
+
+    //delete tutor
+    @DeleteMapping("{id}")
+    public ResponseEntity<String> deleteTutor(@PathVariable("id") Long id){
+
+        tutorService.deleteTutor(id);
+
+        return ResponseEntity.ok("Tutor deleted successfully");
+    }
 }
