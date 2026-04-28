@@ -26,4 +26,16 @@ public class Guardian {
     protected void onCreate() {
         createdAt = LocalDateTime.now();
     }
+
+    public Guardian(Long id, String firstName, String middleName, String lastName, String phoneNumber, String email, String address) {
+        this.id = id;
+        this.firstName = firstName;
+        this.middleName = middleName;
+        this.lastName = lastName;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.address = address;
+    }
+
+
 }
