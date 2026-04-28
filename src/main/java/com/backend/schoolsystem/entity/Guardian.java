@@ -37,5 +37,9 @@ public class Guardian {
         this.address = address;
     }
 
+    public Guardian(){
+
+    }
+
 
 }
