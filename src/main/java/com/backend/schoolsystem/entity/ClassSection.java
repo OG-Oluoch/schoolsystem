@@ -1,18 +1,20 @@
 package com.backend.schoolsystem.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.time.Year;
 
 @Data
 @Entity
-public class ClassSection {
+@NoArgsConstructor
+@AllArgsConstructor
+public class ClassSection extends BaseEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+
     private String sectionName;
 
     @ManyToOne
@@ -22,6 +24,5 @@ public class ClassSection {
     private Tutor tutor;
     private Year academicYear;
     private Integer noOfStudents;
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
+
 }

@@ -1,13 +1,19 @@
 package com.backend.schoolsystem.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
 @Data
 @Entity
-public class Guardian {
+@NoArgsConstructor
+@AllArgsConstructor
+
+
+public class Guardian extends BaseEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,27 +25,9 @@ public class Guardian {
     private String phoneNumber;
     private String address;
 
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
 
-    @PrePersist
-    protected void onCreate() {
-        createdAt = LocalDateTime.now();
-    }
 
-    public Guardian(Long id, String firstName, String middleName, String lastName, String phoneNumber, String email, String address) {
-        this.id = id;
-        this.firstName = firstName;
-        this.middleName = middleName;
-        this.lastName = lastName;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
-        this.address = address;
-    }
 
-    public Guardian(){
-
-    }
 
 
 }

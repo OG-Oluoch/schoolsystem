@@ -1,15 +1,17 @@
 package com.backend.schoolsystem.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity
-public class StudentParent {
+@NoArgsConstructor
+@AllArgsConstructor
+public class StudentParent extends BaseEntity{
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+
     @ManyToOne
     private Student student;
     @ManyToOne

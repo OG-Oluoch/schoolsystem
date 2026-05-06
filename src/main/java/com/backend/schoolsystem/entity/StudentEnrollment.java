@@ -2,18 +2,20 @@ package com.backend.schoolsystem.entity;
 
 import com.backend.schoolsystem.entity.enums.CurriculumType;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Data
 @Entity
-public class StudentEnrollment {
+@NoArgsConstructor
+@AllArgsConstructor
+public class StudentEnrollment extends BaseEntity{
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+
     @ManyToOne
     private Student student_fk_id;
     private CurriculumType curriculumType;
@@ -24,11 +26,5 @@ public class StudentEnrollment {
     private Long roll_number;
     private String status;
 
-    private LocalDateTime created_at;
-    private LocalDateTime updated_at;
 
-    @PrePersist
-    protected void onCreate() {
-        created_at = LocalDateTime.now();
-    }
 }

@@ -12,11 +12,9 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Tutor {
+public class Tutor extends BaseEntity{
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    
     private String firstName;
     private String lastName;
     private String email;
@@ -25,22 +23,8 @@ public class Tutor {
     private Gender gender;
     private String status;
 
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
 
     public Tutor(Long id, String firstName, String lastName, String email, Integer phoneNumber, String subjectSpecialization, Gender gender, String status) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.phoneNumber = phoneNumber;
-        this.subjectSpecialization = subjectSpecialization;
-        this.gender = gender;
-        this.status = status;
-    }
-
-    @PrePersist
-    protected void onCreate() {
-        createdAt = java.time.LocalDateTime.now();
+        super();
     }
 }

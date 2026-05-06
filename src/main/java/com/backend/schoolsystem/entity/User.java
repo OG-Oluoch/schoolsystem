@@ -2,13 +2,22 @@ package com.backend.schoolsystem.entity;
 
 import com.backend.schoolsystem.entity.enums.Role;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
 @Entity
-public class User {
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class User extends BaseEntity{
 
-    private Long id;
+
     private String firstName;
     private String lastName;
     private String userName;
@@ -17,6 +26,7 @@ public class User {
     private String password;
     private Role role;
     private Boolean isActive;
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
+
+
+
 }

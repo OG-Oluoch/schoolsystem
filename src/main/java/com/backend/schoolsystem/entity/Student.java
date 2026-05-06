@@ -16,11 +16,9 @@ import java.util.Date;
 @AllArgsConstructor
 @Entity
 @Table(name = "students")
-public class Student {
+public class Student extends BaseEntity{
 
-   @Id
-   @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+  
 
 
 
@@ -50,38 +48,7 @@ public class Student {
     private LocalDateTime updated_at;
 
 
-
-
-    public Student(Long id, String firstName, String middleName, String lastName, String nemisNumber, Long rollNumber, Gender gender, LocalDate date, String currentClassSection, LocalDate admissionDate, boolean active) {
-        this.id = id;
-        this.firstName = firstName;
-        this.middleName = middleName;
-        this.lastName = lastName;
-        this.nemisNumber = nemisNumber;
-        this.rollNumber = rollNumber;
-        this.gender = gender;
-        this.dateOfBirth = date;
-        this.currentClassSection = currentClassSection;
-        this.admissionDate = admissionDate;
-        this.isActive = active;
+    public Student(Long id, String firstName, String middleName, String lastName, String nemisNumber, Long rollNumber, Gender gender, LocalDate localDate, String s, LocalDate localDate1, boolean active) {
+        super();
     }
-
-
-
-
-    // Automatically set the created_at field when the entity is persisted
-  @PrePersist
-  protected void onCreate() {
-
-        this.created_at = LocalDateTime.now();
-        this.updated_at = LocalDateTime.now();
-  }
-
-    // Automatically update the updated_at field when the entity is updated
-    @PreUpdate
-    protected void onUpdate() {
-        this.updated_at = LocalDateTime.now();
-    }
-
-
 }
