@@ -25,6 +25,7 @@ public class User extends BaseEntity{
     private Integer phoneNumber;
     private String password;
     private Role role;
+    //private DateTime lastLogin;
     private Boolean isActive;
 
 
