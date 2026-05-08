@@ -18,6 +18,7 @@ public class Guardian extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private Long user_id;
     private String firstName;
     private String middleName;
     private String lastName;

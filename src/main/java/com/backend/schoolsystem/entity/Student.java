@@ -25,6 +25,7 @@ public class Student extends BaseEntity{
     private String firstName;
     private String middleName;
     private String lastName;
+    private Long user_id;
 
     @Column(unique = true, nullable = false)
     private String nemisNumber;
