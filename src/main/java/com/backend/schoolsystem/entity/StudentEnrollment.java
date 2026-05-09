@@ -16,15 +16,16 @@ import java.time.LocalDateTime;
 public class StudentEnrollment extends BaseEntity{
 
 
-    @ManyToOne
-    private Student student_fk_id;
+
+    private Long student_fk_id;
     private CurriculumType curriculumType;
+    private Long academic_year_id;
     private String nemisNumber;
     private LocalDate enrollmentDate;
     private String grade_level_id;
     private String classes_section_id;
     private Long roll_number;
-    private String status;
+    private String status; // active, transferred, completed
 
 
 }

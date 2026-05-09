@@ -11,7 +11,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
 
-@Data
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -22,21 +22,18 @@ public class Student extends BaseEntity{
 
 
 
-    private String firstName;
-    private String middleName;
-    private String lastName;
+
     private Long user_id;
 
     @Column(unique = true, nullable = false)
     private String nemisNumber;
 
-    @Column(unique = true, nullable = false)
-    private Long rollNumber;
+
 
     @Enumerated(EnumType.STRING)
     private Gender gender;
     private LocalDate dateOfBirth;
-    private String currentClassSection;
+
     private LocalDate admissionDate;
     private boolean isActive;
 

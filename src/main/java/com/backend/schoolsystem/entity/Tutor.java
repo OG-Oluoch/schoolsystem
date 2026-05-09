@@ -6,7 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
+
 
 @Data
 @AllArgsConstructor
@@ -15,16 +16,13 @@ import java.time.LocalDateTime;
 public class Tutor extends BaseEntity{
 
     
-    private String firstName;
-    private String lastName;
-    private String email;
-    private Integer phoneNumber;
+    private Long user_id;
     private String subjectSpecialization;
+    private String department;
     private Gender gender;
-    private String status;
+    private LocalDate hireDate;
+    private String status; // active, leave, transferred
 
 
-    public Tutor(Long id, String firstName, String lastName, String email, Integer phoneNumber, String subjectSpecialization, Gender gender, String status) {
-        super();
-    }
+
 }
