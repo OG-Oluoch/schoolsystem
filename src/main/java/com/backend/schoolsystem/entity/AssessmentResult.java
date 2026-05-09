@@ -14,4 +14,8 @@ public class AssessmentResult extends BaseEntity{
     private Long subjectIdFk;
     private Long gradedById;
     private Long markObtained;
+    private String grade;
+    private Long gradePoints;
+    private String isAbsent;
+    private String remarks;
 }
