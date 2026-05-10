@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
-@Data
+
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor

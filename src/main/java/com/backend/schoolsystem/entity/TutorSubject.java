@@ -1,10 +1,11 @@
 package com.backend.schoolsystem.entity;
 
+import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
 public class TutorSubject extends BaseEntity{
