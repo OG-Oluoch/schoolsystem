@@ -1,6 +1,7 @@
 package com.backend.schoolsystem.entity;
 
 import com.backend.schoolsystem.entity.enums.Gender;
+import com.backend.schoolsystem.entity.enums.StudentStatus;
 import jakarta.persistence.*;
 
 
@@ -23,7 +24,7 @@ public class Student extends BaseEntity{
 
 
 
-    private Long user_id;
+
 
     @Column(unique = true, nullable = false)
     private String nemisNumber;
@@ -35,15 +36,12 @@ public class Student extends BaseEntity{
     private LocalDate dateOfBirth;
 
     private LocalDate admissionDate;
-    private boolean isActive;
+
+    @Enumerated(EnumType.STRING)
+    private StudentStatus status = StudentStatus.ACTIVE;
 
 
-    @Column(nullable = false, updatable = false)
-    private LocalDateTime created_at;
 
-
-    @Column(nullable = false)
-    private LocalDateTime updated_at;
 
 
     public Student(Long id, String firstName, String middleName, String lastName, String nemisNumber, Long rollNumber, Gender gender, LocalDate localDate, String s, LocalDate localDate1, boolean active) {

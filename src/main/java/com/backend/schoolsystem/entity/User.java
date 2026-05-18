@@ -1,10 +1,7 @@
 package com.backend.schoolsystem.entity;
 
 import com.backend.schoolsystem.entity.enums.Role;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,10 +20,20 @@ public class User extends BaseEntity{
     private String email;
     private Integer phoneNumber;
     private String password;
+
+    @Enumerated(EnumType.STRING)
     private Role role;
-    //private DateTime lastLogin;
+    private LocalDateTime lastLogin;
     private Boolean isActive;
 
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    private Tutor tutor;
+
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    private Guardian guardian;
+
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    private Student student;
 
 
 }
