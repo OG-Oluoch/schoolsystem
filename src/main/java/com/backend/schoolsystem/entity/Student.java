@@ -17,6 +17,8 @@ import java.util.Date;
 @AllArgsConstructor
 @Entity
 @Table(name = "students")
+@Getter
+@Setter
 public class Student extends BaseEntity{
 
   
@@ -29,7 +31,7 @@ public class Student extends BaseEntity{
     @Column(unique = true, nullable = false)
     private String nemisNumber;
 
-
+    private Long rollNumber;
 
     @Enumerated(EnumType.STRING)
     private Gender gender;

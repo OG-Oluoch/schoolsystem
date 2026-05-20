@@ -3,6 +3,7 @@ package com.backend.schoolsystem.service.impl;
 import com.backend.schoolsystem.dto.GuardianDto;
 import com.backend.schoolsystem.entity.Guardian;
 import com.backend.schoolsystem.entity.Tutor;
+import com.backend.schoolsystem.exception.ErrorCode;
 import com.backend.schoolsystem.exception.ResourceNotFoundException;
 import com.backend.schoolsystem.mapper.GuardianMapper;
 import com.backend.schoolsystem.mapper.TutorMapper;
@@ -32,7 +33,7 @@ public class GuardianServiceImpl implements GuardianService {
     public GuardianDto getGuardianById(Long id) {
 
        Guardian guardian = guardianRepository.findById(id)
-                .orElseThrow(()-> new ResourceNotFoundException("Guardian with the given id does not exist: "+id));
+                .orElseThrow(()-> new ResourceNotFoundException(ErrorCode.PARENT_NOT_FOUND,"Guardian with the given id does not exist: "+id));
         return GuardianMapper.mapToGuardianDto(guardian);
     }
 
@@ -40,7 +41,7 @@ public class GuardianServiceImpl implements GuardianService {
     public GuardianDto getGuardianByEmail(String email) {
 
        Guardian guardian = guardianRepository.findByEmail(email)
-                .orElseThrow(()-> new ResourceNotFoundException("Guardian with the given email does not exist: "+email));
+                .orElseThrow(()-> new ResourceNotFoundException(ErrorCode.PARENT_NOT_FOUND,"Guardian with the given email does not exist: "+email));
 
        return GuardianMapper.mapToGuardianDto(guardian);
     }
@@ -89,7 +90,7 @@ public class GuardianServiceImpl implements GuardianService {
     public void deleteGuardian(Long id) {
 
         guardianRepository.findById(id)
-                .orElseThrow(()-> new ResourceNotFoundException("Guardian with the given id does not exist: "+id));
+                .orElseThrow(()-> new ResourceNotFoundException(ErrorCode.PARENT_NOT_FOUND,"Guardian with the given id does not exist: "+id));
 
         guardianRepository.deleteById(id);
 

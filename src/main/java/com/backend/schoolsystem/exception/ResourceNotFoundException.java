@@ -3,16 +3,21 @@ package com.backend.schoolsystem.exception;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-@ResponseStatus(value = HttpStatus.NOT_FOUND)
-public class ResourceNotFoundException extends RuntimeException{
-
-
-    public ResourceNotFoundException(String message){
-
-        super(message);
-
-    }
+public class ResourceNotFoundException extends SchoolException {
+    public ResourceNotFoundException(ErrorCode errorCode) { super(errorCode); }
+    public ResourceNotFoundException(ErrorCode errorCode, String detail) { super(errorCode, detail); }
 }
+
+//@ResponseStatus(value = HttpStatus.NOT_FOUND)
+//public class ResourceNotFoundException extends RuntimeException{
+//
+//
+//    public ResourceNotFoundException(String message){
+//
+//        super(message);
+//
+//    }
+//}
 
 //@ResponseStatus(HttpStatus.NOT_FOUND)
 //public class ResourceNotFoundException extends RuntimeException {

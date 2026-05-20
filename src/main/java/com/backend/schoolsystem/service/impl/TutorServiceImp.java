@@ -2,6 +2,7 @@ package com.backend.schoolsystem.service.impl;
 
 import com.backend.schoolsystem.dto.TutorDto;
 import com.backend.schoolsystem.entity.Tutor;
+import com.backend.schoolsystem.exception.ErrorCode;
 import com.backend.schoolsystem.exception.ResourceNotFoundException;
 import com.backend.schoolsystem.mapper.TutorMapper;
 import com.backend.schoolsystem.repository.TutorRepository;
@@ -32,7 +33,7 @@ public class TutorServiceImp implements TutorService {
     public TutorDto getTutorById(Long id) {
 
         Tutor tutor = tutorRepository.findById(id)
-                .orElseThrow(()-> new ResourceNotFoundException("Tutor with the given id does not exist: "+id));
+                .orElseThrow(()-> new ResourceNotFoundException(ErrorCode.TEACHER_NOT_FOUND,"Tutor with the given id does not exist: "+id));
         return TutorMapper.mapToTutorDto(tutor);
     }
 
@@ -40,7 +41,7 @@ public class TutorServiceImp implements TutorService {
     public TutorDto getTutorByEmail(String email) {
 
       Tutor tutor =  tutorRepository.findByEmail(email)
-                .orElseThrow(()-> new ResourceNotFoundException("Tutor with the given email does not exist: "+email));
+                .orElseThrow(()-> new ResourceNotFoundException(ErrorCode.TEACHER_NOT_FOUND,"Tutor with the given email does not exist: "+email));
 
       return TutorMapper.mapToTutorDto(tutor);
     }
@@ -61,10 +62,7 @@ public class TutorServiceImp implements TutorService {
       Tutor tutor =  tutorRepository.findById(id)
                 .orElseThrow(()-> new RuntimeException("Tutor with the given id does not exist: "+id));
 
-      tutor.setFirstName(tutorDto.getFirstName());
-      tutor.setLastName(tutorDto.getLastName());
-      tutor.setEmail(tutorDto.getEmail());
-      tutor.setPhoneNumber(tutorDto.getPhoneNumber());
+
       tutor.setSubjectSpecialization(tutorDto.getSubjectSpecialization());
       tutor.setGender(tutorDto.getGender());
       tutor.setStatus(tutorDto.getStatus());
@@ -78,7 +76,7 @@ public class TutorServiceImp implements TutorService {
     public void deleteTutor(Long id) {
 
      Tutor tutor = tutorRepository.findById(id)
-                .orElseThrow(()-> new ResourceNotFoundException("Tutor with the given id does not exist: "+id));
+                .orElseThrow(()-> new ResourceNotFoundException(ErrorCode.TEACHER_NOT_FOUND,"Tutor with the given id does not exist: "+id));
 
      tutorRepository.delete(tutor);
 

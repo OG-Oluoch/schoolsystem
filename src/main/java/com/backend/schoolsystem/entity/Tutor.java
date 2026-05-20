@@ -2,9 +2,7 @@ package com.backend.schoolsystem.entity;
 
 import com.backend.schoolsystem.entity.enums.Gender;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDate;
 
@@ -13,10 +11,12 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Getter
+@Setter
 public class Tutor extends BaseEntity{
 
     
-    private Long user_id;
+
     private String subjectSpecialization;
     private String department;
     private Gender gender;

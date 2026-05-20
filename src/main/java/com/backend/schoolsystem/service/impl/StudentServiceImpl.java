@@ -2,6 +2,7 @@ package com.backend.schoolsystem.service.impl;
 
 import com.backend.schoolsystem.dto.StudentDto;
 import com.backend.schoolsystem.entity.Student;
+import com.backend.schoolsystem.exception.ErrorCode;
 import com.backend.schoolsystem.exception.ResourceNotFoundException;
 import com.backend.schoolsystem.mapper.StudentMapper;
 import com.backend.schoolsystem.repository.StudentRepository;
@@ -32,7 +33,7 @@ public class StudentServiceImpl implements StudentService {
     public StudentDto getStudentById(Long id) {
 
       Student student =  studentRepository.findById(id)
-                .orElseThrow(()-> new ResourceNotFoundException("Student does not exist with the given id: "+id));
+                .orElseThrow(()-> new ResourceNotFoundException(ErrorCode.STUDENT_NOT_FOUND,"Student does not exist with the given id: "+id));
 
       return StudentMapper.mapToStudentDto(student);
     }
@@ -48,18 +49,16 @@ public class StudentServiceImpl implements StudentService {
     public StudentDto updateStudent(Long studentId, StudentDto studentDto) {
 
        Student student = studentRepository.findById(studentId)
-                .orElseThrow(()-> new ResourceNotFoundException("Student does not exist with the given id: "+studentId));
+                .orElseThrow(()-> new ResourceNotFoundException(ErrorCode.STUDENT_NOT_FOUND,"Student does not exist with the given id: "+studentId));
 
-       student.setFirstName(studentDto.getFirstName());
-       student.setMiddleName(studentDto.getMiddleName());
-       student.setLastName(studentDto.getLastName());
+
        student.setNemisNumber(studentDto.getNemisNumber());
        student.setRollNumber(studentDto.getRollNumber());
        student.setGender(studentDto.getGender());
        student.setDateOfBirth(studentDto.getDateOfBirth());
-       student.setCurrentClassSection(studentDto.getCurrentClassSection());
+
        student.setAdmissionDate(studentDto.getAdmissionDate());
-       student.setActive(studentDto.isActive());
+
 
        Student updatedStudent = studentRepository.save(student);
 
@@ -70,7 +69,7 @@ public class StudentServiceImpl implements StudentService {
     public void deleteStudent(Long studentId) {
 
         Student student =  studentRepository.findById(studentId)
-                .orElseThrow(()-> new ResourceNotFoundException("Student does not exist with the given id: "+studentId));
+                .orElseThrow(()-> new ResourceNotFoundException(ErrorCode.STUDENT_NOT_FOUND,"Student does not exist with the given id: "+studentId));
 
         studentRepository.delete(student);
 
