@@ -73,11 +73,7 @@ public class GuardianServiceImpl implements GuardianService {
         Guardian guardian =  guardianRepository.findById(id)
                 .orElseThrow(()-> new RuntimeException("Tutor with the given id does not exist: "+id));
 
-        guardian.setFirstName(updatedGuardianDto.getFirstName());
-        guardian.setMiddleName(updatedGuardianDto.getMiddleName());
-        guardian.setLastName(updatedGuardianDto.getLastName());
-        guardian.setEmail(updatedGuardianDto.getEmail());
-        guardian.setPhoneNumber(updatedGuardianDto.getPhoneNumber());
+
         guardian.setAddress(updatedGuardianDto.getAddress());
 
         Guardian updatedGuardian = guardianRepository.save(guardian);
