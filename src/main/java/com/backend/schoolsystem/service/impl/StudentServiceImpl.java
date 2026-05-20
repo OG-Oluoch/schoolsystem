@@ -53,7 +53,6 @@ public class StudentServiceImpl implements StudentService {
 
 
        student.setNemisNumber(studentDto.getNemisNumber());
-       student.setRollNumber(studentDto.getRollNumber());
        student.setGender(studentDto.getGender());
        student.setDateOfBirth(studentDto.getDateOfBirth());
 

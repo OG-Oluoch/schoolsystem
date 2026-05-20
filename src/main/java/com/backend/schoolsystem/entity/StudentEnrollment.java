@@ -20,7 +20,7 @@ public class StudentEnrollment extends BaseEntity{
     private LocalDate enrollmentDate;
     private String grade_level_id;
     private String classes_section_id;
-    private Long roll_number;
+    private Long admissionNumber;
     private String status; // active, transferred, completed
 
 

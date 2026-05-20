@@ -1,6 +1,6 @@
 package com.backend.schoolsystem.entity.enums;
 
-public enum Role {
+public enum EnumRole {
 
     ADMIN,TEACHER,STAFF,PARENT,STUDENT;
 

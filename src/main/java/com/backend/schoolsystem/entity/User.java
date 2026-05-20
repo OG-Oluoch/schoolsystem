@@ -1,9 +1,8 @@
 package com.backend.schoolsystem.entity;
 
-import com.backend.schoolsystem.entity.enums.Role;
+import com.backend.schoolsystem.entity.enums.EnumRole;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;

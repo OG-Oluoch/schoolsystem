@@ -25,13 +25,22 @@ public class Student extends BaseEntity{
 
 
 
-
-
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    private User user;
 
     @Column(unique = true, nullable = false)
     private String nemisNumber;
 
-    private Long rollNumber;
+    @OneToOne(mappedBy = "student", cascade = CascadeType.ALL)
+    @JoinColumn(name = "admission_number", referencedColumnName = "admissionNumber")
+    private StudentEnrollment admissionNumber;
+
+    @ManyToOne
+    private ClassSection classSection;
+
+    @ManyToOne
+    private GradeLevel gradeLevel;
 
     @Enumerated(EnumType.STRING)
     private Gender gender;
