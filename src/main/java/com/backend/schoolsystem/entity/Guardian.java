@@ -15,14 +15,11 @@ import java.time.LocalDateTime;
 
 public class Guardian extends BaseEntity{
 
-
+   @OneToOne(mappedBy = "guardian", fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
     private Long user_id;
 
     private String address;
-
-
-
-
 
 
 }

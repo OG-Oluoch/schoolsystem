@@ -36,8 +36,6 @@ public class Student extends BaseEntity{
     @JoinColumn(name = "admission_number", referencedColumnName = "admissionNumber")
     private StudentEnrollment admissionNumber;
 
-    @ManyToOne
-    private ClassSection classSection;
 
     @ManyToOne
     private GradeLevel gradeLevel;
@@ -46,7 +44,9 @@ public class Student extends BaseEntity{
     private Gender gender;
     private LocalDate dateOfBirth;
 
-    private LocalDate admissionDate;
+    @OneToOne(mappedBy = "student", cascade = CascadeType.ALL)
+    @JoinColumn(name = "enrollmentDate", referencedColumnName = "enrollmentDate")
+    private StudentEnrollment admissionDate;
 
     @Enumerated(EnumType.STRING)
     private StudentStatus status = StudentStatus.ACTIVE;

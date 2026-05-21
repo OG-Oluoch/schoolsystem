@@ -24,7 +24,6 @@ public class StudentDto {
     private Gender gender;
     private LocalDate dateOfBirth;
     private String currentClassSection;
-    private LocalDate admissionDate;
     private boolean isActive;
 
 }

@@ -2,6 +2,7 @@ package com.backend.schoolsystem.service.impl;
 
 import com.backend.schoolsystem.dto.TutorDto;
 import com.backend.schoolsystem.entity.Tutor;
+import com.backend.schoolsystem.entity.enums.TutorStatus;
 import com.backend.schoolsystem.exception.ErrorCode;
 import com.backend.schoolsystem.exception.ResourceNotFoundException;
 import com.backend.schoolsystem.mapper.TutorMapper;
@@ -65,7 +66,7 @@ public class TutorServiceImp implements TutorService {
 
       tutor.setSubjectSpecialization(tutorDto.getSubjectSpecialization());
       tutor.setGender(tutorDto.getGender());
-      tutor.setStatus(tutorDto.getStatus());
+      tutor.setStatus(TutorStatus.valueOf(tutorDto.getStatus()));
 
       Tutor updatedTutor = tutorRepository.save(tutor);
 

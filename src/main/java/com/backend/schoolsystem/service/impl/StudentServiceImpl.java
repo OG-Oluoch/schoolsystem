@@ -56,9 +56,6 @@ public class StudentServiceImpl implements StudentService {
        student.setGender(studentDto.getGender());
        student.setDateOfBirth(studentDto.getDateOfBirth());
 
-       student.setAdmissionDate(studentDto.getAdmissionDate());
-
-
        Student updatedStudent = studentRepository.save(student);
 
         return StudentMapper.mapToStudentDto(updatedStudent);
