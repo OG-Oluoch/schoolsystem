@@ -15,7 +15,6 @@ public class CalendarEvent extends BaseEntity{
     private Long academicYearId;
     private Long termId;
     private Long gradeLevelId;
-    private Long examId;
     private String title;
     private String description;
     private String eventType;

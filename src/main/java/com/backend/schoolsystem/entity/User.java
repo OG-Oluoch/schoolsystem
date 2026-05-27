@@ -20,19 +20,9 @@ public class User extends BaseEntity{
     private Integer phoneNumber;
     private String password;
 
-    @Enumerated(EnumType.STRING)
-    private Role role;
+
     private LocalDateTime lastLogin;
     private Boolean isActive;
-
-    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
-    private Tutor tutor;
-
-    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
-    private Guardian guardian;
-
-    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
-    private Student student;
 
 
 }

@@ -55,7 +55,8 @@ public class Student extends BaseEntity{
 
 
 
-    public Student(Long id, String firstName, String middleName, String lastName, String nemisNumber, Long rollNumber, Gender gender, LocalDate localDate, String s, LocalDate localDate1, boolean active) {
-        super();
+    public Student( String firstName, String middleName, String lastName, String nemisNumber, Long rollNumber, Gender gender, LocalDate localDate, String s, LocalDate localDate1, boolean active) {
+
     }
+
 }

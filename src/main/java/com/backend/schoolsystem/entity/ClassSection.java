@@ -23,6 +23,6 @@ public class ClassSection extends BaseEntity {
     @ManyToOne
     private Tutor tutor;
     private Year academicYear;
-    private Integer noOfStudents;
+
 
 }
