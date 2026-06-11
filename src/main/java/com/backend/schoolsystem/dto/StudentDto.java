@@ -1,5 +1,6 @@
 package com.backend.schoolsystem.dto;
 
+import com.backend.schoolsystem.entity.GradeLevel;
 import com.backend.schoolsystem.entity.enums.Gender;
 import lombok.*;
 
@@ -13,17 +14,16 @@ import java.util.Date;
 @ToString
 public class StudentDto {
 
-    private Long id;
+    private Long user_id;
 
-    private String firstName;
-    private String middleName;
-    private String lastName;
     private String nemisNumber;
 
-    private Long rollNumber;
-    private Gender gender;
+    private String gradeLevel;
+
+    private Long admissionNumber;
+    private String gender;
     private LocalDate dateOfBirth;
-    private String currentClassSection;
+    private LocalDate admissionDate;
     private boolean isActive;
 
 }

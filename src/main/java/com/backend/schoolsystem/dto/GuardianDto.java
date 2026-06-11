@@ -8,21 +8,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class GuardianDto {
 
-    private Long id;
-    private String firstName;
-    private String middleName;
-    private String lastName;
-    private String email;
-    private String phoneNumber;
+    private Long user_id;
+
     private String address;
 
-    public GuardianDto(Long id, String firstName, String middleName, String lastName, String email, String phoneNumber, String address) {
-        this.id = id;
-        this.firstName = firstName;
-        this.middleName = middleName;
-        this.lastName = lastName;
-        this.email = email;
-        this.phoneNumber = phoneNumber;
+    public GuardianDto(Long user_id, String address) {
+        this.user_id = user_id;
         this.address = address;
     }
 }
