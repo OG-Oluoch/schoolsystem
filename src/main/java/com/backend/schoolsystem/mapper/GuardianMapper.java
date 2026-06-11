@@ -13,12 +13,7 @@ public class GuardianMapper {
         }
 
         return new GuardianDto(
-                guardian.getId(),
-                guardian.getFirstName(),
-                guardian.getMiddleName(),
-                guardian.getLastName(),
-                guardian.getEmail(),
-                guardian.getPhoneNumber(),
+                guardian.getUser_id(),
                 guardian.getAddress()
         ) ;
 

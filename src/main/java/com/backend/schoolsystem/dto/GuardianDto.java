@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 public class GuardianDto {
 
     private Long id;
@@ -16,4 +15,14 @@ public class GuardianDto {
     private String email;
     private String phoneNumber;
     private String address;
+
+    public GuardianDto(Long id, String firstName, String middleName, String lastName, String email, String phoneNumber, String address) {
+        this.id = id;
+        this.firstName = firstName;
+        this.middleName = middleName;
+        this.lastName = lastName;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+    }
 }

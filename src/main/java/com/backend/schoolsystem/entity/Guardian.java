@@ -8,7 +8,6 @@ import java.time.LocalDateTime;
 
 @Entity
 @NoArgsConstructor
-@AllArgsConstructor
 @Getter
 @Setter
 
@@ -21,5 +20,8 @@ public class Guardian extends BaseEntity{
 
     private String address;
 
-
+    public Guardian(Long user_id, String address) {
+        this.user_id = user_id;
+        this.address = address;
+    }
 }
