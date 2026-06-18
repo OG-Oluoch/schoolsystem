@@ -14,10 +14,6 @@ public class TutorMapper {
 
         return new TutorDto(
                 tutor.getId(),
-                tutor.getFirstName(),
-                tutor.getLastName(),
-                tutor.getEmail(),
-                tutor.getPhoneNumber(),
                 tutor.getSubjectSpecialization(),
                 tutor.getGender(),
                 tutor.getStatus()

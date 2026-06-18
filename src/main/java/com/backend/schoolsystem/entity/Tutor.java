@@ -26,5 +26,6 @@ public class Tutor extends BaseEntity{
     private TutorStatus status; // active, leave, transferred
 
 
-
+    public Tutor(Long id, String firstName, String lastName, String email, Integer phoneNumber, String subjectSpecialization, Gender gender, String status) {
+    }
 }

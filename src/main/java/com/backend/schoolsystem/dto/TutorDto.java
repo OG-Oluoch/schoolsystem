@@ -1,6 +1,7 @@
 package com.backend.schoolsystem.dto;
 
 import com.backend.schoolsystem.entity.enums.Gender;
+import com.backend.schoolsystem.entity.enums.TutorStatus;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,4 +20,7 @@ public class TutorDto {
     private Gender gender;
     private String status;
 
+
+    public TutorDto(Long id, String subjectSpecialization, Gender gender, TutorStatus status) {
+    }
 }
