@@ -1,5 +1,6 @@
 package com.backend.schoolsystem.exception;
 
+import com.backend.schoolsystem.errorResponse.ErrorCode;
 import lombok.Getter;
 
 @Getter

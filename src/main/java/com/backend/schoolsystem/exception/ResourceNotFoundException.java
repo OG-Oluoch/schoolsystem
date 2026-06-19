@@ -1,7 +1,6 @@
 package com.backend.schoolsystem.exception;
 
-import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.ResponseStatus;
+import com.backend.schoolsystem.errorResponse.ErrorCode;
 
 public class ResourceNotFoundException extends SchoolException {
     public ResourceNotFoundException(ErrorCode errorCode) { super(errorCode); }

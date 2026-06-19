@@ -2,7 +2,7 @@ package com.backend.schoolsystem.service.impl;
 
 import com.backend.schoolsystem.dto.StudentDto;
 import com.backend.schoolsystem.entity.Student;
-import com.backend.schoolsystem.exception.ErrorCode;
+import com.backend.schoolsystem.errorResponse.ErrorCode;
 import com.backend.schoolsystem.exception.ResourceNotFoundException;
 import com.backend.schoolsystem.mapper.StudentMapper;
 import com.backend.schoolsystem.repository.StudentRepository;

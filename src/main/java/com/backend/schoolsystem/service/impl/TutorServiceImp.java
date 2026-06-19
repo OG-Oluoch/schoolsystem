@@ -3,7 +3,7 @@ package com.backend.schoolsystem.service.impl;
 import com.backend.schoolsystem.dto.TutorDto;
 import com.backend.schoolsystem.entity.Tutor;
 import com.backend.schoolsystem.entity.enums.TutorStatus;
-import com.backend.schoolsystem.exception.ErrorCode;
+import com.backend.schoolsystem.errorResponse.ErrorCode;
 import com.backend.schoolsystem.exception.ResourceNotFoundException;
 import com.backend.schoolsystem.mapper.TutorMapper;
 import com.backend.schoolsystem.repository.TutorRepository;

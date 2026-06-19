@@ -1,4 +1,4 @@
-package com.backend.schoolsystem.exception;
+package com.backend.schoolsystem.errorResponse;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Builder;

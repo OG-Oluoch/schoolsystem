@@ -2,11 +2,9 @@ package com.backend.schoolsystem.service.impl;
 
 import com.backend.schoolsystem.dto.GuardianDto;
 import com.backend.schoolsystem.entity.Guardian;
-import com.backend.schoolsystem.entity.Tutor;
-import com.backend.schoolsystem.exception.ErrorCode;
+import com.backend.schoolsystem.errorResponse.ErrorCode;
 import com.backend.schoolsystem.exception.ResourceNotFoundException;
 import com.backend.schoolsystem.mapper.GuardianMapper;
-import com.backend.schoolsystem.mapper.TutorMapper;
 import com.backend.schoolsystem.repository.GuardianRepository;
 import com.backend.schoolsystem.service.GuardianService;
 import lombok.AllArgsConstructor;
