@@ -61,7 +61,7 @@ public class TutorServiceImp implements TutorService {
     public TutorDto updateTutor(Long id, TutorDto tutorDto) {
 
       Tutor tutor =  tutorRepository.findById(id)
-                .orElseThrow(()-> new RuntimeException("Tutor with the given id does not exist: "+id));
+                .orElseThrow(()-> new ResourceNotFoundException(ErrorCode.TEACHER_NOT_FOUND,"Tutor with the given id does not exist: "+id));
 
 
       tutor.setSubjectSpecialization(tutorDto.getSubjectSpecialization());

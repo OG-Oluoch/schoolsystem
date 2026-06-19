@@ -21,7 +21,7 @@ public class StudentDto {
     private String gradeLevel;
 
     private Long admissionNumber;
-    private String gender;
+    private Gender gender;
     private LocalDate dateOfBirth;
     private LocalDate admissionDate;
     private boolean isActive;

@@ -102,16 +102,16 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
         List<ErrorDetail> fieldErrors = ex.getBindingResult().getFieldErrors().stream()
                 .map(fe -> ErrorDetail.builder()
-                        .field(fe.getField())
+                        .errorDetails(fe.getField())
                         .rejectedValue(fe.getRejectedValue())
-                        .message(fe.getDefaultMessage())
+                        .errorMessage(fe.getDefaultMessage())
                         .build())
                 .collect(Collectors.toList());
 
         ex.getBindingResult().getGlobalErrors().forEach(ge ->
                 fieldErrors.add(ErrorDetail.builder()
-                        .field(ge.getObjectName())
-                        .message(ge.getDefaultMessage())
+                        .errorDetails(ge.getObjectName())
+                        .errorMessage(ge.getDefaultMessage())
                         .build()));
 
         String path = request.getDescription(false).replace("uri=", "");

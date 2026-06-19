@@ -2,6 +2,8 @@ package com.backend.schoolsystem.exception;
 
 import com.backend.schoolsystem.errorResponse.ErrorCode;
 
+
+
 public class ResourceNotFoundException extends SchoolException {
     public ResourceNotFoundException(ErrorCode errorCode) { super(errorCode); }
     public ResourceNotFoundException(ErrorCode errorCode, String detail) { super(errorCode, detail); }
