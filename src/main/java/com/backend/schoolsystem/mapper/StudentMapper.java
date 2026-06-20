@@ -32,16 +32,14 @@ public class StudentMapper {
         }
 
        return new Student(
-                studentDto.getId(),
-                studentDto.getFirstName(),
-                studentDto.getMiddleName(),
-                studentDto.getLastName(),
+                studentDto.getUser_id(),
                 studentDto.getNemisNumber(),
-                studentDto.getRollNumber(),
-                studentDto.getGender(),
-                studentDto.getDateOfBirth() != null ? studentDto.getDateOfBirth() : null,
-                studentDto.getCurrentClassSection() != null ? studentDto.getCurrentClassSection() : null,
-                studentDto.isActive()
+                studentDto.getGradeLevel(),
+               studentDto.getAdmissionNumber(),
+               studentDto.getGender(),
+               studentDto.getDateOfBirth(),
+               studentDto.getAdmissionNumber(),
+               studentDto.getIsActive()
        );
 
 

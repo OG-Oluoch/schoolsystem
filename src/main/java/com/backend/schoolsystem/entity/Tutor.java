@@ -21,8 +21,12 @@ public class Tutor extends BaseEntity{
     private User user;
     private String subjectSpecialization;
     private String department;
+
+    @Enumerated(EnumType.STRING)
     private Gender gender;
     private LocalDate hireDate;
+
+    @Enumerated(EnumType.STRING)
     private TutorStatus status; // active, leave, transferred
 
 
