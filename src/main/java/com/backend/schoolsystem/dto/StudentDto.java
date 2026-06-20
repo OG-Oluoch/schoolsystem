@@ -21,9 +21,9 @@ public class StudentDto {
 
     private String nemisNumber;
 
-    private GradeLevel gradeLevel;
-
     private StudentEnrollment admissionNumber;
+
+    private GradeLevel gradeLevel;
     private Gender gender;
     private LocalDate dateOfBirth;
     private LocalDate admissionDate;
