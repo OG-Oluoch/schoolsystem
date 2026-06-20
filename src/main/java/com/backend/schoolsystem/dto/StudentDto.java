@@ -17,13 +17,13 @@ import java.util.Date;
 @ToString
 public class StudentDto {
 
-    private User user_id;
+    private Long user_id;
 
     private String nemisNumber;
 
-    private StudentEnrollment admissionNumber;
+    private Long admissionNumber;
 
-    private GradeLevel gradeLevel;
+    private Integer gradeLevel;
     private Gender gender;
     private LocalDate dateOfBirth;
     private LocalDate admissionDate;
