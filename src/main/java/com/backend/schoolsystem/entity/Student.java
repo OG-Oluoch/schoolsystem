@@ -37,7 +37,7 @@ public class Student extends BaseEntity{
     private StudentEnrollment admissionNumber;
 
 
-    @ManyToOne
+    @OneToOne(mappedBy = "student", cascade = CascadeType.ALL)
     private GradeLevel gradeLevel;
 
     @Enumerated(EnumType.STRING)

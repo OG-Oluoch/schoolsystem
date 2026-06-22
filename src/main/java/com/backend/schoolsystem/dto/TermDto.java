@@ -1,4 +1,4 @@
 package com.backend.schoolsystem.dto;
 
-public class TermDto {
+public record TermDto() {
 }
