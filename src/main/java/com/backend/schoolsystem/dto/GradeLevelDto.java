@@ -1,4 +1,4 @@
 package com.backend.schoolsystem.dto;
 
-public class GradeLevelDto {
+public record GradeLevelDto() {
 }

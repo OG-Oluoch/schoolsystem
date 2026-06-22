@@ -49,7 +49,7 @@ public class Student extends BaseEntity{
     private StudentEnrollment admissionDate;
 
     @Enumerated(EnumType.STRING)
-    private StudentStatus status = StudentStatus.ACTIVE;
+    private StudentStatus status;
 
 
 

@@ -10,26 +10,21 @@ import lombok.*;
 import java.time.LocalDate;
 import java.util.Date;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@ToString
-public class StudentDto {
 
-    private Long user_id;
+public record StudentDto(Long user_id,
 
-    private String nemisNumber;
+        String nemisNumber,
 
-    private Long admissionNumber;
+        Long admissionNumber,
 
-    private Integer gradeLevel;
-    private Gender gender;
-    private LocalDate dateOfBirth;
-    private LocalDate admissionDate;
-    private StudentStatus isActive;
+        Integer gradeLevel,
+        Gender gender,
+        LocalDate dateOfBirth,
+        LocalDate admissionDate,
+        StudentStatus isActive) {
 
 
-    public StudentDto(Long user_id, String nemisNumber, StudentEnrollment admissionNumber, GradeLevel gradeLevel, Gender gender, LocalDate localDate, StudentStatus status) {
-    }
+
+
+
 }
