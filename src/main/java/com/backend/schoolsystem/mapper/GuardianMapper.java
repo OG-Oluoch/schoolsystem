@@ -29,9 +29,9 @@ public class GuardianMapper {
 
         return new Guardian(
 
-                guardianDto.getUser_id(),
+                guardianDto.userDto(),
 
-                guardianDto.getAddress()
+                guardianDto.address()
 
         );
 

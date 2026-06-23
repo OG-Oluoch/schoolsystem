@@ -38,6 +38,7 @@ public class Student extends BaseEntity{
 
 
     @OneToOne(mappedBy = "student", cascade = CascadeType.ALL)
+    @JoinColumn(name = "gradeLevel_id")
     private GradeLevel gradeLevel;
 
     @Enumerated(EnumType.STRING)
@@ -45,7 +46,7 @@ public class Student extends BaseEntity{
     private LocalDate dateOfBirth;
 
     @OneToOne(mappedBy = "student", cascade = CascadeType.ALL)
-    @JoinColumn(name = "enrollmentDate", referencedColumnName = "enrollmentDate")
+    @JoinColumn(name = "enrollmentDate_id")
     private StudentEnrollment admissionDate;
 
     @Enumerated(EnumType.STRING)
