@@ -7,10 +7,15 @@ import java.time.LocalDateTime;
 
 
 @Entity
+@Data
 @NoArgsConstructor
-@Getter
-@Setter
-public class Guardian extends BaseEntity{
+@AllArgsConstructor
+
+public class Guardian {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
    @OneToOne(mappedBy = "guardian", fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
@@ -18,8 +23,20 @@ public class Guardian extends BaseEntity{
 
     private String address;
 
-    public Guardian(User user_id, String address) {
-        this.user_id = user_id;
-        this.address = address;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+
+    @PrePersist
+    public void onCreate(){
+        createdAt = LocalDateTime.now();
+
     }
+
+    @PreUpdate
+    public void onUpdate(){
+
+        updatedAt = LocalDateTime.now();
+    }
+
+
 }

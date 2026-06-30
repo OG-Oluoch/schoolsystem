@@ -10,11 +10,14 @@ import java.time.Year;
 
 
 @Entity
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ClassSection extends BaseEntity {
+public class ClassSection  {
 
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String sectionName;
 
     @ManyToOne
@@ -23,6 +26,21 @@ public class ClassSection extends BaseEntity {
     @ManyToOne
     private Tutor tutor;
     private Year academicYear;
+
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+
+    @PrePersist
+    public void onCreate(){
+        createdAt = LocalDateTime.now();
+
+    }
+
+    @PreUpdate
+    public void onUpdate(){
+
+        updatedAt = LocalDateTime.now();
+    }
 
 
 }

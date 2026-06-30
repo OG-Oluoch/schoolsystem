@@ -6,15 +6,18 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
-
+import java.time.LocalDateTime;
 
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Getter
-@Setter
-public class Tutor extends BaseEntity{
+@Data
+public class Tutor {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @OneToOne(mappedBy = "tutor", fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", referencedColumnName = "id")
@@ -29,7 +32,19 @@ public class Tutor extends BaseEntity{
     @Enumerated(EnumType.STRING)
     private TutorStatus status; // active, leave, transferred
 
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
 
-    public Tutor(Long id, String firstName, String lastName, String email, Integer phoneNumber, String subjectSpecialization, Gender gender, String status) {
+    @PrePersist
+    public void onCreate(){
+        createdAt = LocalDateTime.now();
+
     }
+
+    @PreUpdate
+    public void onUpdate(){
+
+        updatedAt = LocalDateTime.now();
+    }
+
 }

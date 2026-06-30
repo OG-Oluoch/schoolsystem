@@ -17,12 +17,13 @@ import java.util.Date;
 @AllArgsConstructor
 @Entity
 @Table(name = "students")
-@Getter
-@Setter
-public class Student extends BaseEntity{
+@Data
+public class Student {
 
-  
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
 
     @OneToOne(fetch = FetchType.LAZY)
@@ -45,19 +46,24 @@ public class Student extends BaseEntity{
     private Gender gender;
     private LocalDate dateOfBirth;
 
-    @OneToOne(mappedBy = "student", cascade = CascadeType.ALL)
-    @JoinColumn(name = "enrollmentDate_id")
-    private StudentEnrollment admissionDate;
-
     @Enumerated(EnumType.STRING)
     private StudentStatus status;
 
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
 
-
-
-
-    public Student( String firstName, String middleName, String lastName, String nemisNumber, Long rollNumber, Gender gender, LocalDate localDate, String s, LocalDate localDate1, boolean active) {
+    @PrePersist
+    public void onCreate(){
+        createdAt = LocalDateTime.now();
 
     }
+
+    @PreUpdate
+    public void onUpdate(){
+
+        updatedAt = LocalDateTime.now();
+    }
+
+
 
 }

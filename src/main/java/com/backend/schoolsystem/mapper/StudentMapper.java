@@ -14,14 +14,14 @@ public class StudentMapper {
         }
 
         return new StudentDto(
-            student.getUser() != null ? student.getUser().getId() : null,
+
+                student.getUser(),
                 student.getNemisNumber(),
                 student.getAdmissionNumber(),
                 student.getGradeLevel(),
                 student.getGender(),
-                student.getDateOfBirth() != null ? student.getDateOfBirth() : null,
+                student.getDateOfBirth(),
                 student.getStatus());
-
 
     }
 
@@ -32,14 +32,14 @@ public class StudentMapper {
         }
 
        return new Student(
-                studentDto.getUser_id(),
-                studentDto.getNemisNumber(),
-                studentDto.getGradeLevel(),
-               studentDto.getAdmissionNumber(),
-               studentDto.getGender(),
-               studentDto.getDateOfBirth(),
-               studentDto.getAdmissionNumber(),
-               studentDto.getIsActive()
+               studentDto.user_id(),
+               studentDto.admissionNumber(),
+               studentDto.gradeLevel(),
+               studentDto.gender(),
+               studentDto.dateOfBirth(),
+               studentDto.admissionDate(),
+               studentDto.isActive()
+
        );
 
 

@@ -1,16 +1,22 @@
 package com.backend.schoolsystem.entity;
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.DayOfWeek;
 import java.time.LocalDateTime;
 
 @Entity
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Timetable extends BaseEntity{
+public class Timetable{
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     private Long classSectionIFk;
     private Long subjectIdFk;
@@ -21,5 +27,20 @@ public class Timetable extends BaseEntity{
     private LocalDateTime startTime;
     private LocalDateTime endTime;
     private String room;
+
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+
+    @PrePersist
+    public void onCreate(){
+        createdAt = LocalDateTime.now();
+
+    }
+
+    @PreUpdate
+    public void onUpdate(){
+
+        updatedAt = LocalDateTime.now();
+    }
 
 }
